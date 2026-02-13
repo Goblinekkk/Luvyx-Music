@@ -2,11 +2,13 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luvyx Music | v1.0</title>
+    
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="53a49257-0da6-41f1-b294-f56a5ba441af" data-blockingmode="auto" type="text/javascript"></script>
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,33 +17,42 @@
     </nav>
 
     <main class="player-container">
-        <div class="album-art" id="art">
-            <div class="visualizer-overlay"></div>
+        <div class="search-box">
+            <input type="text" id="musicSearch" placeholder="Hledej skladbu...">
+            <button id="searchBtn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+        
+        <div id="resultsList" class="results-hide"></div>
+
+        <div class="album-art-container">
+            <div class="album-art" id="art"></div>
         </div>
         
         <div class="info">
-            <h1 id="trackTitle">Název skladby</h1>
-            <p id="artistName">Umělec</p>
+            <h1 id="trackTitle">Připraven k hraní</h1>
+            <p id="artistName">Luvyx Ecosystem</p>
+        </div>
+
+        <div class="progress-wrapper" id="progressClickArea">
+            <div class="progress-bg">
+                <div class="progress-bar" id="progress"></div>
+            </div>
         </div>
 
         <div class="controls">
-            <button id="prevBtn" class="ctrl-btn">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"></line></svg>
-            </button>
             <button id="playBtn" class="play-btn">
-                <svg id="playIcon" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <svg id="playIcon" viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
             </button>
-            <button id="nextBtn" class="ctrl-btn">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"></line></svg>
-            </button>
-        </div>
-
-        <div class="progress-container">
-            <div class="progress-bar" id="progress"></div>
         </div>
     </main>
 
     <audio id="audio" src=""></audio>
+
+    <footer>
+        <p class="branding-footer">LUVYX MUSIC BY GOBLINEKKK</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
